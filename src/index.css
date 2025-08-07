@@ -1,0 +1,27 @@
+@import url('https://fonts.cdnfonts.com/css/hubot-sans');
+@import 'tailwindcss';
+
+@theme {
+    --color-primary: #dbfd01;
+    --color-base: #f6f6f6;
+    --bg-seconday: #232323;
+    --text-base: clamp(1rem, 2.5vw, 2rem);
+    --font-hubot-semicondensed: 'Hubot Sans', sans-serif;
+    --font-hubot-semicondensed--font-stretch: 85%;
+    --bg-secondary: #232323;
+    /* paddings */
+    --padding-base: min(2rem, 4%);
+}
+
+body {
+    background-color: black;
+    height: 100vh;
+    height: 100dvh;
+    font-family: var(--font-hubot-semicondensed--font-stretch);
+}
+
+/* font smooth and antialias */
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
