@@ -1,9 +1,11 @@
 import Hero from './components/Hero';
+import RankingSecond from './components/RankingSecond';
 
 export default function App() {
     return (
-        <main className="h-screen  container max-w-[1440px] mx-auto w-full">
+        <main className="container h-[100dvh] max-w-[1440px] mx-auto w-full">
             <Hero />
+            <RankingSecond />
         </main>
     );
 }

@@ -2,7 +2,7 @@ import MobileLogo from '../assets/mobileversionLogo.png';
 import DesktopLogo from '../assets/Vector.svg';
 export default function Navbar() {
     return (
-        <nav className=" font-bold p-base mx-auto h-[88px] flex justify-between items-center text-white">
+        <nav className=" font-bold p-base mx-auto  max-h-[88px] h-full flex justify-between items-center text-white">
             <section>
                 <img
                     className="w-full lg:hidden h-auto md:max-w-[clamp(4rem,3vw,4rem)]"

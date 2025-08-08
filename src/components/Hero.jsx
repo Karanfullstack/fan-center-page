@@ -5,13 +5,13 @@ import BgVectorMobile from '../assets/Vector-mobile.png';
 import Jersey from '../assets/jersey_home.svg';
 export default function Hero() {
     return (
-        <section className="h-[calc(100dvh-90px)] w-full ">
+        <section className="h-[100dvh] w-full ">
             <header>
                 <Navbar />
             </header>
 
             {/* Hero Section */}
-            <article className="flex flex-col border-white relative h-full  w-full  justify-start items-center">
+            <article className="flex flex-col relative h-[calc(100dvh-90px)]  w-full  justify-start items-center">
                 <div
                     style={{ backgroundImage: `url(${BgVectorMobile})` }}
                     className={'w-full md:hidden   absolute h-full bg-no-repeat bg-contain bg-top'}
@@ -30,7 +30,7 @@ export default function Hero() {
 
                 {/* main content */}
 
-                <section className="p-base z-10 h-full md:mt-10 w-full flex-col space-y-4 flex font-hubot-semicondensed  text-base  ">
+                <section className="p-base z-10 h-full  md:mt-10 w-full flex-col space-y-4 flex font-hubot-semicondensed  text-base  ">
                     <figure className="flex md:justify-start flex-grow justify-center items-center flex-col space-y-6">
                         <div className="flex w-full  justify-center  items-center">
                             <img

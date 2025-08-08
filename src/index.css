@@ -4,7 +4,8 @@
 @theme {
     --color-primary: #dbfd01;
     --color-base: #f6f6f6;
-    --bg-seconday: #232323;
+    --color-seconday: #232323;
+
     --text-base: clamp(1rem, 2.5vw, 2rem);
     --font-hubot-semicondensed: 'Hubot Sans', sans-serif;
     --font-hubot-semicondensed--font-stretch: 85%;
