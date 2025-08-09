@@ -7,13 +7,58 @@ import image3 from '../assets/mobile-icons/Frame.png';
 import imageDesktop1 from '../assets/desktop-ranking/Frame-1.png';
 import imageDesktop2 from '../assets/desktop-ranking/Frame-2.png';
 import imageDesktop3 from '../assets/desktop-ranking/Frame.png';
+import SlidersRanking from './SlidersRanking';
 
 const imageData = [image3, image2, image1];
 const imageDesktopData = [imageDesktop3, imageDesktop1, imageDesktop2];
+const prizes = [
+    {
+        rank: 1,
+        amount: 500,
+        currency: 'zł',
+        description: 'Bon do wykorzystania w Media Expert',
+    },
+    {
+        rank: 2,
+        amount: 400,
+        currency: 'zł',
+        description: 'Karta podarunkowa Allegro',
+    },
+    {
+        rank: 3,
+        amount: 300,
+        currency: 'zł',
+        description: 'Voucher do Empik',
+    },
+    {
+        rank: 4,
+        amount: 200,
+        currency: 'zł',
+        description: 'Bon do wykorzystania w Media Markt',
+    },
+    {
+        rank: 5,
+        amount: 100,
+        currency: 'zł',
+        description: 'Doładowanie Google Play',
+    },
+    {
+        rank: 6,
+        amount: 50,
+        currency: 'zł',
+        description: 'Zniżka na Spotify Premium',
+    },
+    {
+        rank: 7,
+        amount: 25,
+        currency: 'zł',
+        description: 'Voucher do Biedronki',
+    },
+];
 export default function Ranking() {
     return (
         <article className="max-w-[1440px] overflow-hidden  flex-col flex justify-start items-center w-full pt-10 px-5 md:pt-12 md:px-7 h-auto">
-            <section className="w-full h-full lg:space-y-10 md:space-y-0 space-y-10 flex-col flex justify-center items-center">
+            <section className="w-full h-full lg:space-y-10 md:space-y-10 space-y-10 flex-col flex justify-center items-center">
                 <figure className="flex justify-center h-1/3 md:h-1/4  md:w-full w-[22.07rem]  flex-col items-center">
                     {/* main heading and Dowload Buttton */}
                     <section className="w-full  space-y-6 h-full flex flex-col justify-start items-center">
@@ -52,6 +97,14 @@ export default function Ranking() {
                                 src={image}
                                 alt="award_images"
                             />
+                        ))}
+                    </section>
+
+                    {/* sliders section	 */}
+
+                    <section className="w-full h-full overflow-y-scroll gap-x-2.5 flex items-center ">
+                        {prizes.map((prize) => (
+                            <SlidersRanking key={prize.rank} prize={prize} />
                         ))}
                     </section>
                 </figure>
