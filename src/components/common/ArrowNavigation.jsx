@@ -2,10 +2,10 @@ import { Left, Right } from '../../assets/Arrow';
 
 export default function ArrowNavigation({ handlePrev, isBeginning, handleNext, isEnd }) {
     return (
-        <div className="w-[92px] lg:w-[92px] lg:h-[46px]  md:w-[10vh] md:h-[5vh]  p-1 sm:w-[85px] flex gap-1 items-center justify-between h-[45px]  shadow-sm bg-[#232323]">
+        <div className="w-[92px]  h-[48px] flex gap-0 items-center justify-between   shadow-sm bg-[#232323]">
             <button
                 onClick={handlePrev}
-                className={`w-1/2 flex items-center justify-center h-full transition-all duration-200 ease-in-out ${
+                className={`w-[40px] h-[40px] flex items-center justify-center  transition-all duration-200 ease-in-out ${
                     isBeginning
                         ? 'bg-[#232323] opacity-40 cursor-not-allowed'
                         : 'bg-[#DBFD01] cursor-pointer hover:bg-[#DBFD01]'
@@ -20,7 +20,7 @@ export default function ArrowNavigation({ handlePrev, isBeginning, handleNext, i
 
             <button
                 onClick={handleNext}
-                className={`w-1/2 flex items-center justify-center h-full transition-all duration-200 ease-in-out ${
+                className={`w-[40px] h-[40px] flex items-center justify-center  transition-all duration-200 ease-in-out ${
                     isEnd
                         ? 'bg-[#232323] opacity-40 cursor-not-allowed'
                         : 'bg-[#DBFD01] cursor-pointer hover:bg-[#DBFD01]'
