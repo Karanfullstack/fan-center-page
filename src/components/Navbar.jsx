@@ -2,7 +2,7 @@ import MobileLogo from '../assets/mobileversionLogo.png';
 import DesktopLogo from '../assets/Vector.svg';
 export default function Navbar() {
     return (
-        <nav className=" font-bold p-base mx-auto  max-h-[88px] h-full flex justify-between items-center text-white">
+        <nav className=" font-bold p-base mx-auto w-full  max-h-[88px] h-full flex justify-between items-center text-white">
             <section>
                 <img
                     className="w-full lg:hidden h-auto md:max-w-[clamp(4rem,3vw,4rem)]"
@@ -16,14 +16,14 @@ export default function Navbar() {
                     alt="mobile_logo"
                 />
             </section>
-            <section>
+            <section className="flex items-center   w-[156px] h-[48px] justify-end ">
                 <button
-                    className="leading-none 
-                text-[1.05rem] uppercase font-hubot-semicondensed
+                    className="
+                text-[1.05rem] uppercase w-full h-full font-hubot-semicondensed
                  bg-primary text-black
-                  px-[clamp(1.30rem,1.40rem,1.40rem)] 
-                  py-[clamp(1rem,1.10rem,1.10rem)]
-                  font-bold leding-1
+                  
+                 
+                   leading-1
                   "
                 >
                     pobierz apkę

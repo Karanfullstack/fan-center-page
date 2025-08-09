@@ -8,7 +8,7 @@
 
     --text-base: clamp(1rem, 2.5vw, 2rem);
     --font-hubot-semicondensed: 'Hubot Sans', sans-serif;
-    --font-hubot-semicondensed--font-stretch: 85%;
+    --font-hubbot-stretch: 85%;
     --bg-secondary: #232323;
     /* paddings */
     --padding-base: min(2rem, 4%);
@@ -18,7 +18,8 @@ body {
     background-color: black;
     height: 100vh;
     height: 100dvh;
-    font-family: var(--font-hubot-semicondensed--font-stretch);
+    font-family: var(--font-hubot-semicondensed, sans-serif);
+    font-stretch: var(--font-hubbot-stretch);
 }
 
 /* font smooth and antialias */

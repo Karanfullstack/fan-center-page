@@ -18,7 +18,7 @@ export default function RankingSecond() {
                             <span
                                 className="
                             text-xl text-primary font-bold leading-[100%]
-                            md:text-3xl
+                            md:text-2xl
                             
                             "
                             >
@@ -33,7 +33,9 @@ export default function RankingSecond() {
                                 Bon do wykorzystania w Media Expert
                             </span>
                         </div>
-                        <span className="font-bold  text-2xl md:text-3xl leding-[1.5]">500 zł</span>
+                        <span className="font-bold   text-2xl md:text-3xl leding-[1.5]">
+                            500 zł
+                        </span>
                     </div>
                 </section>
 
@@ -45,7 +47,7 @@ export default function RankingSecond() {
                     {[1, 2, 3].map((_item, index) => (
                         <div className="max-w-[min(800px,100%)] md:space-y-2 space-y-1 p-4 flex flex-col justify-start items-start font-hubot-semicondensed w-full mx-auto bg-seconday h-[116px] md:h-[140px] ">
                             <div className="flex space-y-1  flex-col justify-center items-start">
-                                <span className="text-xl md:text-3xl  text-primary font-bold leading-[100%]">
+                                <span className="text-xl md:text-2xl  text-primary font-bold leading-[100%]">
                                     {index + 1}.
                                 </span>
                                 <span
