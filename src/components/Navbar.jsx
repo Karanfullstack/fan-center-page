@@ -1,5 +1,6 @@
 import MobileLogo from '../assets/mobileversionLogo.png';
 import DesktopLogo from '../assets/Vector.svg';
+import Button from '../components/common/Button';
 export default function Navbar() {
     return (
         <nav className=" font-bold p-base mx-auto w-full  max-h-[88px] h-full flex justify-between items-center text-white">
@@ -17,17 +18,7 @@ export default function Navbar() {
                 />
             </section>
             <section className="flex items-center   w-[156px] h-[48px] justify-end ">
-                <button
-                    className="
-                text-[1.05rem] uppercase w-full h-full font-hubot-semicondensed
-                 bg-primary text-black
-                  
-                 
-                   leading-1
-                  "
-                >
-                    pobierz apkę
-                </button>
+                <Button />
             </section>
         </nav>
     );

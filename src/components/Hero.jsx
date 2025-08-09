@@ -59,7 +59,7 @@ export default function Hero() {
                         </div>
                     </figure>
 
-                    <div className="max-w-[clamp(320px,20vw,356px)] space-x-3 w-full mb-2 md:max-w-[min(500px,70%)]  mx-auto items-center bg-[#232323] flex h-16 md:h-[5rem] lg:h-[4rem] px-1 md:px-2 lg:max-w-[clamp(422px,3vw,490px)] ">
+                    <div className="max-w-[clamp(320px,20vw,356px)] space-x-3 w-full mb-2 md:max-w-[min(500px,70%)]  mx-auto items-center bg-[#232323] flex h-16 md:h-[5rem] lg:h-[4rem] px-2 md:px-2 lg:max-w-[clamp(422px,3vw,490px)] ">
                         <img
                             className="w-auto md:w-full md:max-w-[4rem] lg:max-w-[3rem] h-auto"
                             src={AppIcon}
