@@ -8,6 +8,8 @@ import imageDesktop1 from '../assets/desktop-ranking/Frame-1.png';
 import imageDesktop2 from '../assets/desktop-ranking/Frame-2.png';
 import imageDesktop3 from '../assets/desktop-ranking/Frame.png';
 import SlidersRanking from './SlidersRanking';
+import { useScroll } from './common/useScroll';
+import ArrowNavigation from './common/ArrowNavigation';
 
 const imageData = [image3, image2, image1];
 const imageDesktopData = [imageDesktop3, imageDesktop1, imageDesktop2];
@@ -56,6 +58,7 @@ const prizes = [
     },
 ];
 export default function Ranking() {
+    const { scrollRef, isBeginning, isEnd, handlePrev, handleNext, handleScroll } = useScroll();
     return (
         <article className="max-w-[1440px] overflow-hidden  flex-col flex justify-start items-center w-full pt-10 px-5 md:pt-12 md:px-7 h-auto">
             <section className="w-full h-full lg:space-y-10 md:space-y-10 space-y-10 flex-col flex justify-center items-center">
@@ -102,7 +105,19 @@ export default function Ranking() {
 
                     {/* sliders section	 */}
 
-                    <section className="w-full h-full overflow-y-scroll gap-x-2.5 flex items-center ">
+                    <section className="w-full mt-5 h-auto flex items-center justify-end">
+                        <ArrowNavigation
+                            isBeginning={isBeginning}
+                            isEnd={isEnd}
+                            handlePrev={handlePrev}
+                            handleNext={handleNext}
+                        />
+                    </section>
+                    <section
+                        onScroll={handleScroll}
+                        ref={scrollRef}
+                        className="w-full  h-full overflow-y-hidden hide-scrollbar scroll-smooth   gap-x-2.5 flex items-center "
+                    >
                         {prizes.map((prize) => (
                             <SlidersRanking key={prize.rank} prize={prize} />
                         ))}

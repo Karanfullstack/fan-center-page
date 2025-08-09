@@ -1,6 +1,6 @@
 export default function RankingSecond() {
     return (
-        <article className="flex flex-col border  space-y-7  items-center font-hubot-semicondensed px-4 pt-10 md:pt-14 container min-h-[100dvh] max-w-[1400px] w-full mx-auto justify-start">
+        <article className="flex flex-col border  space-y-7  items-center font-hubot-semicondensed px-4 pt-10 md:pt-14 container min-h-max max-w-[1400px] w-full mx-auto justify-start">
             <figure className="h-full border  flex w-full lg:flex-row lg:space-x-6   lg:space-y-0   space-y-9 flex-col items-start justify-center">
                 <section
                     className="
@@ -44,7 +44,7 @@ export default function RankingSecond() {
                 </section>
 
                 {/* section second */}
-                <section className="text-base lg:w-1/2 md:w-full w-full md:space-y-9 lg:space-y-0 lg:gap-[1.4rem] space-y-3.5 flex items-start flex-col justify-center h-auto ">
+                <section className="text-base lg:w-1/2 md:w-full w-full md:space-y-9 lg:space-y-0 lg:gap-[1.4rem] space-y-5 flex items-start flex-col justify-center h-auto ">
                     <h2 className="font-bold leading-[1.5] text-[clamp(28px,1vw,29px)]">
                         Ranking klubowy (miesięczny)
                     </h2>
