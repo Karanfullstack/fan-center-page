@@ -2,7 +2,7 @@ import Lenis from 'lenis';
 import Hero from './components/Hero';
 import Ranking from './components/Ranking';
 import { useEffect } from 'react';
-import ScreenSlider from './components/ScreenSlider';
+import Screen from './components/Screen';
 
 export default function App() {
     useEffect(() => {
@@ -36,7 +36,7 @@ export default function App() {
         <main className="container  h-[100dvh] max-w-[1440px] mx-auto w-full">
             <Hero />
             <Ranking />
-            <ScreenSlider />
+            <Screen />
         </main>
     );
 }
