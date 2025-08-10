@@ -19,13 +19,19 @@ body {
     height: 100dvh;
     font-family: 'Hubot Sans', sans-serif;
     font-variation-settings: 'wdth' 85;
-    font-stretch: 90%;
+    font-stretch: 85%;
 }
 
 /* font smooth and antialias */
 html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* scroll bar hide */
+    scrollbar-width: none;
+    -ms-overflow-style: none; /* IE and Edge */
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 .scroll-container::-webkit-scrollbar {

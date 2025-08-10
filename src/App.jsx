@@ -2,11 +2,12 @@ import Lenis from 'lenis';
 import Hero from './components/Hero';
 import Ranking from './components/Ranking';
 import { useEffect } from 'react';
+import ScreenSlider from './components/ScreenSlider';
 
 export default function App() {
     useEffect(() => {
         const lenis = new Lenis({
-            duration: 1.6,
+            duration: 2.6,
             easing: (t) => t,
             smoothWheel: false,
             smoothTouch: true,
@@ -34,8 +35,8 @@ export default function App() {
     return (
         <main className="container  h-[100dvh] max-w-[1440px] mx-auto w-full">
             <Hero />
-
             <Ranking />
+            <ScreenSlider />
         </main>
     );
 }
