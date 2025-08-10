@@ -40,11 +40,12 @@ export default function Screen() {
     const { scrollRef, isBeginning, isEnd, handlePrev, handleNext, handleScroll } = useScroll();
     return (
         <section className="max-w-[1400px] flex lg:space-y-6  flex-col container mx-auto pt-10 px-5  w-full  h-[100dvh]">
-            <div className="flex items-center h-1/6  lg:h-auto justify-between">
+            <div className="flex items-center h-1/6   lg:h-auto justify-between">
                 <span className="text-[1rem] text-base font-medium leading-[1.5]">
                     Predykcje, ciekawostki i Wy, Eksperci:
                 </span>
                 <ArrowNavigation
+                gap={2}
                     isBeginning={isBeginning}
                     isEnd={isEnd}
                     handlePrev={handlePrev}

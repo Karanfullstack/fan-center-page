@@ -1,8 +1,10 @@
 import { Left, Right } from '../../assets/Arrow';
 
-export default function ArrowNavigation({ handlePrev, isBeginning, handleNext, isEnd }) {
+export default function ArrowNavigation({ handlePrev, isBeginning, handleNext, isEnd, gap = 0 }) {
     return (
-        <div className="w-[88px]  h-[48px] flex gap-0 items-center justify-between   shadow-sm bg-[#232323]">
+        <div
+            className={`w-[88px]  h-[48px] flex gap-${gap} items-center justify-between   shadow-sm bg-[#232323]`}
+        >
             <button
                 onClick={handlePrev}
                 className={`w-[40px] h-[40px] flex items-center justify-center  transition-all duration-200 ease-in-out ${

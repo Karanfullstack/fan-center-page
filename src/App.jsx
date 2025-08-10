@@ -3,6 +3,7 @@ import Hero from './components/Hero';
 import Ranking from './components/Ranking';
 import { useEffect } from 'react';
 import Screen from './components/Screen';
+import Footer from './components/Footer';
 
 export default function App() {
     useEffect(() => {
@@ -33,10 +34,11 @@ export default function App() {
         };
     }, []);
     return (
-        <main className="container  h-[100dvh] max-w-[1440px] mx-auto w-full">
+        <main className="container h-screen max-w-[1440px] mx-auto w-full">
             <Hero />
-            <Ranking />
             <Screen />
+            <Ranking />
+            <Footer />
         </main>
     );
 }
