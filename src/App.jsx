@@ -4,6 +4,7 @@ import Ranking from './components/Ranking';
 import { useEffect } from 'react';
 import Screen from './components/Screen';
 import Footer from './components/Footer';
+import Downlaod from './components/Downlaod';
 
 export default function App() {
     useEffect(() => {
@@ -38,6 +39,7 @@ export default function App() {
             <Hero />
             <Screen />
             <Ranking />
+            <Downlaod />
             <Footer />
         </main>
     );
