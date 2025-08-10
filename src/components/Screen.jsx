@@ -39,8 +39,8 @@ const screenData = [
 export default function Screen() {
     const { scrollRef, isBeginning, isEnd, handlePrev, handleNext, handleScroll } = useScroll();
     return (
-        <section className="max-w-[1400px] flex  flex-col container mx-auto pt-10 px-5  w-full  h-[100dvh]">
-            <div className="flex items-center h-1/6 justify-between">
+        <section className="max-w-[1400px] flex lg:space-y-6  flex-col container mx-auto pt-10 px-5  w-full  h-[100dvh]">
+            <div className="flex items-center h-1/6  lg:h-auto justify-between">
                 <span className="text-[1rem] text-base font-medium leading-[1.5]">
                     Predykcje, ciekawostki i Wy, Eksperci:
                 </span>
@@ -54,7 +54,7 @@ export default function Screen() {
             <div
                 ref={scrollRef}
                 onScroll={handleScroll}
-                className="w-full h-full overflow-y-scroll  hide-scrollbar scroll-smooth   gap-x-2.5 flex "
+                className="w-full h-full overflow-y-scroll  hide-scrollbar scroll-smooth   gap-x-5 flex "
             >
                 {screenData.map((screen, index) => (
                     <div className="" key={index}>
