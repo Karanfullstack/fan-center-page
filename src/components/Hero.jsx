@@ -5,7 +5,7 @@ import BgVectorMobile from '../assets/Vector-mobile.png';
 import Jersey from '../assets/jersey_home.svg';
 export default function Hero() {
     return (
-        <section className="h-[100dvh] w-full ">
+        <section className="h-[100vh] w-full ">
             <header>
                 <Navbar />
             </header>

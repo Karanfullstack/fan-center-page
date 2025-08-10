@@ -7,24 +7,24 @@ import DownloadApple from '../assets/downloadapple.svg';
 import DownloadPlay from '../assets/downloadplay.svg';
 export default function Downlaod() {
     return (
-        <section className="max-w-[1400px]  flex-col relative flex items-center justify-center w-full  min-h-[100dvh]">
-            <figure className="max-w-[353px]  flex flex-col h-[850px] justify-center items-center w-full">
+        <section className="max-w-[1400px]  flex-col relative flex items-center justify-center w-full  h-[100vh]">
+            <figure className="max-w-full gap-4 pt-26 border border-white  flex flex-col h-[700px]  justify-center items-center w-full">
                 <div className="w-full flex  relative h-[240px]  items-center justify-center  ">
-                    <img className="object-contain w-[65%]" src={IPMan} alt="ipman" />
+                    <img className="object-contain w-[60%]" src={IPMan} alt="ipman" />
 
-                    <div className="absolute -top-27 left-0 max-w-[78px]">
+                    <div className="absolute -top-27 left-0 max-w-[80px]">
                         <img className="h-auto w-auto" src={Stadium} alt="stadium" />
                     </div>
 
-                    <div className="absolute -top-34 right-0 max-w-[78px]">
+                    <div className="absolute -top-34 right-0 max-w-[80px]">
                         <img className="h-auto w-auto" src={Puchar} alt="stadium" />
                     </div>
 
-                    <div className="absolute bottom-5 left-0 max-w-[78px]">
+                    <div className="absolute bottom-5 left-0 max-w-[80px]">
                         <img className="h-auto w-auto" src={Pilka} alt="stadium" />
                     </div>
 
-                    <div className="absolute bottom-0 right-0 max-w-[78px]">
+                    <div className="absolute bottom-0 right-0 max-w-[80px]">
                         <img className="h-auto w-auto" src={Glasses} alt="stadium" />
                     </div>
                 </div>

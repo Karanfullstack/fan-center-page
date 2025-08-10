@@ -2,7 +2,7 @@ import Jersey from '../assets/jersey-back.png';
 import Vector from '../assets/footer/FOOVA.png';
 export default function Footer() {
     return (
-        <footer className="max-w-[1400px]  flex p-5 justify-center md:p-10 md:items-end items-center  container mx-auto w-full  min-h-[100dvh]  ">
+        <footer className="max-w-[1400px]  flex p-5 justify-center  md:p-10 md:items-end items-center  container mx-auto w-full  h-[100vh]  ">
             <section
                 className="max-w-[1360px] p-4 md:p-8 gap-5 flex flex-col md:items-center lg:items-start  bg-seconday min-h-[30rem] lg:min-h-[581px] md:min-h-[50rem] w-full mx-auto"
                 style={{
