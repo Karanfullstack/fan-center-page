@@ -1,7 +1,7 @@
 import Jersey from '../assets/jersey-back.png';
 export default function Footer() {
     return (
-        <footer className="max-w-[1400px] flex p-5 justify-center md:p-10 md:items-end items-center  container mx-auto w-full min-h-[100dvh]  ">
+        <footer className="max-w-[1400px]  flex p-5 justify-center md:p-10 md:items-end items-center  container mx-auto w-full  min-h-[100dvh]  ">
             <section className="max-w-[1360px] p-4 md:p-8 gap-5 flex flex-col  bg-seconday min-h-[30rem] md:min-h-[30rem] w-full mx-auto">
                 {/* W 1 dzien */}
                 <div className="flex p-1 md:flex-row md:h-[67px] text-base h-[7rem] md:max-w-[484px] w-full justify-center md:gap-3 flex-col md:pt-1 md:pr-2 md:pl-0  bg-[#343434] ">
@@ -14,7 +14,7 @@ export default function Footer() {
                 </div>
 
                 {/* heading and image */}
-                <div className="w-full   flex mx-auto md:flex-row justify-between items-center flex-col md:h-[205px] gap-4 md:max-w-max max-w-[20.0625rem] min-h-[35vh]  ">
+                <div className="w-full   flex mx-auto md:flex-row justify-between items-center flex-col md:min-h-[300px]  gap-4 md:max-w-max max-w-[20.0625rem] min-h-[35vh]  ">
                     <h2 className="font-bold h-fit text-[clamp(1.50rem,1.5rem,1.75rem)] md:text-[2.7rem] text-base leading-[1.5]">
                         Chcesz zostać Partnerem Foova FC?
                     </h2>
