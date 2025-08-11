@@ -16,15 +16,16 @@ export default function Downlaod() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const hash = location.hash;
-        if (hash !== 'hash' && hash === '#download-section') {
-            if (containerRef.current) {
-                containerRef.current.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'center',
-                    inline: 'center',
-                });
-            }
+        if (location.hash === '#download-section') {
+            requestAnimationFrame(() => {
+                if (containerRef.current) {
+                    containerRef.current.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center',
+                        inline: 'center',
+                    });
+                }
+            });
         }
         navigate(location.pathname, { replace: true });
     }, [location.hash, navigate, location.pathname]);
@@ -34,6 +35,7 @@ export default function Downlaod() {
             id="download-section"
             className="max-w-[1400px]  flex-col relative flex items-center justify-center w-full  h-[100vh]"
         >
+            <div className="w-full hidden md:block lg:hidden sm:hidden h-[10vh]"></div>
             <figure className="max-w-full md:space-y-7 lg:space-y-0 lg:gap-0 gap-4 pt-26  lg:w-[1200px] lg:h-full  md:w-[800px]  flex flex-col h-[700px] md:h-[850px]  justify-center items-center w-full">
                 <div className="w-full flex lg:pt-10  relative h-[340px]   items-center justify-center  ">
                     <Lottie
@@ -44,7 +46,7 @@ export default function Downlaod() {
                     />
 
                     <AnimateOnView
-                        initialDelay={320}
+                        initialDelay={220}
                         duration={1000}
                         parentClass="absolute lg:-top-30 lg:left-12  md:-top-40 -top-15 left-0 md:max-w-[140px]  max-w-[85px]"
                     >
@@ -60,7 +62,7 @@ export default function Downlaod() {
                     </AnimateOnView>
 
                     <AnimateOnView
-                        initialDelay={200}
+                        initialDelay={420}
                         duration={1000}
                         parentClass=" absolute  lg:-bottom-40 md:-bottom-10 bottom-10 left-0 md:max-w-[140px] max-w-[85px]"
                         animationClass="fade-in-up"
@@ -69,7 +71,7 @@ export default function Downlaod() {
                     </AnimateOnView>
 
                     <AnimateOnView
-                        initialDelay={320}
+                        initialDelay={520}
                         duration={1000}
                         parentClass="absolute lg:-bottom-34 md:-bottom-10 bottom-5 right-0 md:max-w-[140px] max-w-[85px]"
                     >

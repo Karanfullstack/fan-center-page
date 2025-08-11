@@ -109,8 +109,8 @@ const DeleteAccountPolicy = () => {
                 </div>
             </div>
 
-            <div className="relative">
-                <div className="w-full absolute top-20 right-5 max-w-[1200px] px-5  mx-auto flex items-center justify-end">
+            <div className="relative ">
+                <div className="w-full  md:absolute top-20 right-5 max-w-[1200px] px-5  mx-auto flex items-center justify-end">
                     <img
                         onClick={handleTopScroll}
                         className=" object-cover cursor-pointer w-[55px] aspect-[16/16]"

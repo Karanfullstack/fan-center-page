@@ -146,9 +146,10 @@ export default function Ranking() {
                             loop={false}
                             speed={300}
                             breakpoints={{
-                                0: { slidesPerView: 2, spaceBetween: 20 },
-                                640: { slidesPerView: 3, spaceBetween: 20 },
-                                768: { slidesPerView: 4, spaceBetween: 20 },
+                                0: { slidesPerView: 2, spaceBetween: 10 },
+                                640: { slidesPerView: 3, spaceBetween: 15 },
+                                768: { slidesPerView: 4, spaceBetween: 15 },
+                                770: { slidesPerView: 4.3, spaceBetween: 15 },
                                 1024: { slidesPerView: 6.5, spaceBetween: 20 },
                             }}
                             onSwiper={(swiper) => {
