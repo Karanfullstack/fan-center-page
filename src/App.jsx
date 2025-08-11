@@ -9,7 +9,7 @@ import Downlaod from './components/Downlaod';
 export default function App() {
     useEffect(() => {
         const lenis = new Lenis({
-            duration: 2.6,
+            duration: 1,
             easing: (t) => t,
             smoothWheel: false,
             smoothTouch: true,
@@ -24,14 +24,14 @@ export default function App() {
         requestAnimationFrame(raf);
 
         const onLoad = () => {
-            lenis.resize(); // Recalculate scroll size after full load
+            lenis.resize();
         };
 
         window.addEventListener('load', onLoad);
 
         return () => {
             window.removeEventListener('load', onLoad);
-            lenis.destroy(); // Clean up
+            lenis.destroy();
         };
     }, []);
     return (
