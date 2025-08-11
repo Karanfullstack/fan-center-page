@@ -9,8 +9,7 @@ import DownloadPlay from '../assets/downloadplay.svg';
 import { useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
+import AnimateOnView from './common/MotionAct';
 export default function Downlaod() {
     const containerRef = useRef(null);
     const location = useLocation();
@@ -44,21 +43,38 @@ export default function Downlaod() {
                         autoplay={true}
                     />
 
-                    <div className="absolute lg:-top-30 lg:left-12  md:-top-40 -top-15 left-0 md:max-w-[140px]  max-w-[85px]">
+                    <AnimateOnView
+                        initialDelay={320}
+                        duration={1000}
+                        parentClass="absolute lg:-top-30 lg:left-12  md:-top-40 -top-15 left-0 md:max-w-[140px]  max-w-[85px]"
+                    >
                         <img className="h-auto w-auto" src={Stadium} alt="stadium" />
-                    </div>
+                    </AnimateOnView>
 
-                    <div className="absolute lg:-top-20 lg:right-30 md:-top-49 -top-20 right-0 md:max-w-[140px] max-w-[85px]">
+                    <AnimateOnView
+                        initialDelay={320}
+                        duration={1000}
+                        parentClass="absolute lg:-top-20 lg:right-30 md:-top-49 -top-20 right-0 md:max-w-[140px] max-w-[85px]"
+                    >
                         <img className="h-auto w-auto" src={Puchar} alt="stadium" />
-                    </div>
+                    </AnimateOnView>
 
-                    <div className="absolute lg:-bottom-40 md:-bottom-10 bottom-10 left-0 md:max-w-[140px] max-w-[85px]">
+                    <AnimateOnView
+                        initialDelay={200}
+                        duration={1000}
+                        parentClass=" absolute  lg:-bottom-40 md:-bottom-10 bottom-10 left-0 md:max-w-[140px] max-w-[85px]"
+                        animationClass="fade-in-up"
+                    >
                         <img className="h-auto w-auto" src={Pilka} alt="stadium" />
-                    </div>
+                    </AnimateOnView>
 
-                    <div className="absolute lg:-bottom-34 md:-bottom-10 bottom-5 right-0 md:max-w-[140px] max-w-[85px]">
+                    <AnimateOnView
+                        initialDelay={320}
+                        duration={1000}
+                        parentClass="absolute lg:-bottom-34 md:-bottom-10 bottom-5 right-0 md:max-w-[140px] max-w-[85px]"
+                    >
                         <img className="h-auto w-auto" src={Glasses} alt="stadium" />
-                    </div>
+                    </AnimateOnView>
                 </div>
                 <div className="flex flex-col  lg:gap-5 gap-3 md:gap-4 justify-center items-center">
                     <h2 className="text-base md:text-[3.5rem] lg:text-[4rem]  text-[2.5rem] font-bold leading-[1.5]">
