@@ -2,7 +2,8 @@ import Navbar from './Navbar';
 import BgVector from '../assets/bg-vector.svg';
 import AppIcon from '../assets/App-Icon.svg';
 import BgVectorMobile from '../assets/Vector-mobile.png';
-import Jersey from '../assets/jersey_home.svg';
+import Jersey from '../assets/animation/lp-jersey.json';
+import Lottie from 'lottie-react';
 export default function Hero() {
     return (
         <section className="h-[100vh] w-full ">
@@ -33,12 +34,12 @@ export default function Hero() {
                 <section className="p-base z-10 h-full  md:mt-10 w-full flex-col space-y-4 flex font-hubot-semicondensed  text-base  ">
                     <figure className="flex md:justify-start flex-grow justify-center items-center flex-col space-y-6">
                         <div className="flex w-full  justify-center  items-center">
-                            <img
+                            <Lottie
+                                animationData={Jersey}
+                                loop={true}
                                 className="max-w-[clamp(130px,10vw,210px)]  h-auto w-full  md:max-w-[clamp(190px,7vw,210px)]
-                                lg:max-w-[clamp(140px,4vw,180px)]
-                                "
-                                src={Jersey}
-                                alt="jersey"
+                                lg:max-w-[clamp(140px,4vw,180px)]"
+                                autoplay={true}
                             />
                         </div>
                         <div className="flex justify-center items-center">
@@ -59,7 +60,7 @@ export default function Hero() {
                         </div>
                     </figure>
 
-                    <div className="max-w-[clamp(320px,20vw,356px)] space-x-3 w-full mb-2 md:max-w-[min(500px,70%)]  mx-auto items-center bg-[#232323] flex h-16 md:h-[5rem] lg:h-[4rem] px-2 md:px-2 lg:max-w-[clamp(422px,3vw,490px)] ">
+                    <div className="max-w-[clamp(320px,20vw,356px)] space-x-3 w-full lg:mb-0 mb-2 md:max-w-[min(500px,70%)]  mx-auto items-center bg-[#232323] flex h-16 md:h-[5rem] lg:h-[4rem] px-2 md:px-2 lg:max-w-[clamp(422px,3vw,490px)] ">
                         <img
                             className="w-auto md:w-full md:max-w-[4rem] lg:max-w-[3rem] h-auto"
                             src={AppIcon}

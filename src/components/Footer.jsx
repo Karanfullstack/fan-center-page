@@ -1,5 +1,7 @@
 import Jersey from '../assets/jersey-back.png';
 import Vector from '../assets/footer/FOOVA.png';
+import Lottie from 'lottie-react';
+import JerseyPartner from '../assets/animation/lp-jersey-partner.json';
 export default function Footer() {
     return (
         <footer className="max-w-[1400px]  flex p-5 justify-center  md:p-10 md:items-end items-center  container mx-auto w-full  h-[100vh]  ">
@@ -16,7 +18,6 @@ export default function Footer() {
 				md:flex-col md:h-[9.375rem] md:max-w-[584px] md:gap-3 md:pt-1 md:pr-2 md:pl-2 md:items-center
 				"
                 >
-                    {/* bg-primary md:flex-grow  flex justify-center items-center h-full w-full md:w-full md:h-full  text-center text-xl md:text-3xl font-bold leading-[1.5] text-black */}
                     <span
                         className="bg-primary md:flex-grow   flex justify-center items-center h-full w-full lg:w-[151px] lg:h-[59px]  text-center text-xl lg:text-2xl font-bold leading-[1.5] text-black
 					lg:flex-grow md:w-full md:h-full md:text-3xl
@@ -24,7 +25,7 @@ export default function Footer() {
                     >
                         W 1 dzień
                     </span>
-                    {/* h-full md:flex-grow  md:h-3/4 font-medium md:w-auto text-lg md:text-[1.40rem] leading-[1.5] flex justify-center items-center w-full */}
+
                     <span className="h-full  font-medium md:flex-grow md:text-[1.40rem]  md:h-3/4 md:w-auto lg:w-auto text-lg lg:text-[1.25rem] leading-[1.5] flex justify-center items-center h w-full">
                         Wdrożenie na Twoich kanałach!
                     </span>
@@ -37,10 +38,12 @@ export default function Footer() {
                     <h2 className="font-bold  lg:break-words  h-fit text-[clamp(1.50rem,1.5rem,1.75rem)] lg:text-[4rem] md:text-[3.4rem] text-base leading-[1.5]">
                         Chcesz zostać <br /> Partnerem Foova FC?
                     </h2>
-                    <img
-                        className="object-contain  h-auto flex self-center lg:max-w-max max-w-max w-[57%]"
-                        src={Jersey}
-                        alt="jersey"
+
+                    <Lottie
+                        classID="object-contain  h-auto flex self-center lg:max-w-max max-w-max w-[57%]"
+                        animationData={JerseyPartner}
+                        loop={true}
+                        autoplay={true}
                     />
                 </div>
 
