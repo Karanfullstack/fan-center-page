@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import TopArrow from '../assets/top-scroll/Frame.png';
 import Lenis from 'lenis';
+import { HashLink } from 'react-router-hash-link';
 
 const PrivacyPolicy = () => {
     useEffect(() => {
@@ -66,11 +67,7 @@ const PrivacyPolicy = () => {
                             <p className="text-sm text-gray-400 ">Ostatnia zmiana: 15.07.2025</p>
                         </div>
                         <div className="w-[153px] mt-2 flex items-center justify-center text-[#1A1A1A] font-hubot font-bold h-[48px] p-2 bg-[#DBFD01] uppercase">
-                            <Link to="/#download_mobile" className="sm:hidden">
-                                pobierz apkę
-                            </Link>
-
-                            <Link to="/#download_desktop" className="sm:block hidden" smooth>
+                            <Link smooth to="/#download-section">
                                 pobierz apkę
                             </Link>
                         </div>
@@ -222,15 +219,16 @@ const PrivacyPolicy = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-full max-w-[1200px] px-5 mb-4 mx-auto flex items-center justify-end">
-                <img
-                    onClick={handleTopScroll}
-                    className=" object-cover cursor-pointer w-[55px] aspect-[16/16]"
-                    src={TopArrow}
-                    alt
-                />
-            </div>
-            <div>
+
+            <div className="relative">
+                <div className="w-full absolute top-20 right-5 max-w-[1200px] px-5  mx-auto flex items-center justify-end">
+                    <img
+                        onClick={handleTopScroll}
+                        className=" object-cover cursor-pointer w-[55px] aspect-[16/16]"
+                        src={TopArrow}
+                        alt
+                    />
+                </div>
                 <Footer />
             </div>
         </div>

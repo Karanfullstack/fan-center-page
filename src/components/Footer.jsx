@@ -2,6 +2,7 @@ import Jersey from '../assets/jersey-back.png';
 import Vector from '../assets/footer/FOOVA.png';
 import Lottie from 'lottie-react';
 import JerseyPartner from '../assets/animation/lp-jersey-partner.json';
+import { Link } from 'react-router-dom';
 export default function Footer() {
     return (
         <footer className="max-w-[1400px]  flex p-5 justify-center  md:p-10 md:items-end items-center  container mx-auto w-full  h-[100vh]  ">
@@ -15,7 +16,7 @@ export default function Footer() {
             >
                 <div
                     className="flex p-1 lg:flex-row lg:h-[67px] text-base h-[7rem] lg:max-w-[484px] w-full justify-center lg:gap-3 flex-col lg:pt-1 lg:pr-2 lg:pl-0  bg-[#343434]
-				md:flex-col md:h-[9.375rem] md:max-w-[584px] md:gap-3 md:pt-1 md:pr-2 md:pl-2 md:items-center
+				md:flex-col md:h-[9.375rem] md:max-w-[684px] md:gap-3 md:pt-1 md:pr-2 md:pl-2 md:items-center
 				"
                 >
                     <span
@@ -63,14 +64,25 @@ export default function Footer() {
                         © FOOVA 2025
                     </p>
 
-                    <div className="flex flex-col lg:flex-row lg:justify-between space-x-4  items-center justify-center">
-                        <p className="font-medium text-[1rem] leading-[1.5] ">Regulamin</p>
-                        <p className="font-medium text-[1rem] leading-[1.5] ">
+                    <div className="flex flex-col lg:flex-row  lg:justify-between space-x-4  items-center justify-center">
+                        <Link
+                            to="/regulamin"
+                            className="font-medium hover:underline text-[1rem] leading-[1.5] "
+                        >
+                            Regulamin
+                        </Link>
+                        <Link
+                            to="/polityka-prytwatności"
+                            className="font-medium hover:underline text-[1rem] leading-[1.5] "
+                        >
                             Polityka Prytwatności
-                        </p>
-                        <p className="font-medium text-[1rem] leading-[1.5] ">
+                        </Link>
+                        <Link
+                            to="/informacje-Usunięciu-konta"
+                            className="font-medium text-[1rem] hover:underline leading-[1.5] "
+                        >
                             Informacje o Usunięciu Konta
-                        </p>
+                        </Link>
                     </div>
                 </div>
             </section>

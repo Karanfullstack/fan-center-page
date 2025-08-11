@@ -6,9 +6,33 @@ import Lottie from 'lottie-react';
 import StickMan from '../assets/animation/lp-boy.json';
 import DownloadApple from '../assets/downloadapple.svg';
 import DownloadPlay from '../assets/downloadplay.svg';
+import { useEffect, useRef } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+
 export default function Downlaod() {
+    const containerRef = useRef(null);
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const hash = location.hash;
+        if (hash !== 'hash' && hash === '#download-section') {
+            if (containerRef.current) {
+                containerRef.current.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center',
+                    inline: 'center',
+                });
+            }
+        }
+        navigate(location.pathname, { replace: true });
+    }, [location.hash, navigate, location.pathname]);
     return (
-        <section className="max-w-[1400px]  flex-col relative flex items-center justify-center w-full  h-[100vh]">
+        <section
+            ref={containerRef}
+            id="download-section"
+            className="max-w-[1400px]  flex-col relative flex items-center justify-center w-full  h-[100vh]"
+        >
             <figure className="max-w-full md:space-y-7 lg:space-y-0 lg:gap-0 gap-4 pt-26  lg:w-[1200px] lg:h-full  md:w-[800px]  flex flex-col h-[700px] md:h-[850px]  justify-center items-center w-full">
                 <div className="w-full flex lg:pt-10  relative h-[340px]   items-center justify-center  ">
                     <Lottie
@@ -42,9 +66,29 @@ export default function Downlaod() {
                         Pobierz aplikację:
                     </p>
 
-                    <div className="flex gap-3 items-center w-full lg:max-w-[270px]  md:max-w-[280px] max-w-[170px] h-full  justify-center">
-                        <img src={DownloadApple} alt="Download on the App Store" />
-                        <img src={DownloadPlay} alt="Get it on Google Play" />
+                    <div className="flex gap-3  items-center w-full lg:max-w-[270px]  md:max-w-[280px] max-w-[170px] h-full  justify-center">
+                        <img
+                            className="hover:cursor-pointer"
+                            onClick={() =>
+                                window.open(
+                                    'https://apps.apple.com/us/app/foova-fc/id6748235923',
+                                    '_blank'
+                                )
+                            }
+                            src={DownloadApple}
+                            alt="Download on the App Store"
+                        />
+                        <img
+                            className="hover:cursor-pointer"
+                            onClick={() =>
+                                window.open(
+                                    'https://play.google.com/store/apps/details?id=org.foova',
+                                    '_blank'
+                                )
+                            }
+                            src={DownloadPlay}
+                            alt="Get it on Google Play"
+                        />
                     </div>
                 </div>
             </figure>

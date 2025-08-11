@@ -4,7 +4,9 @@ import AppIcon from '../assets/App-Icon.svg';
 import BgVectorMobile from '../assets/Vector-mobile.png';
 import Jersey from '../assets/animation/lp-jersey.json';
 import Lottie from 'lottie-react';
+import { useNavigate } from 'react-router-dom';
 export default function Hero() {
+    const navigate = useNavigate();
     return (
         <section className="h-[100vh] w-full ">
             <header>
@@ -60,7 +62,10 @@ export default function Hero() {
                         </div>
                     </figure>
 
-                    <div className="max-w-[clamp(320px,20vw,356px)] space-x-3 w-full lg:mb-0 mb-2 md:max-w-[min(500px,70%)]  mx-auto items-center bg-[#232323] flex h-16 md:h-[5rem] lg:h-[4rem] px-2 md:px-2 lg:max-w-[clamp(422px,3vw,490px)] ">
+                    <div
+                        onClick={() => navigate('/#download-section')}
+                        className="max-w-[clamp(320px,20vw,356px)] hover:cursor-pointer space-x-3 w-full lg:mb-0 mb-2 md:max-w-[min(500px,70%)]  mx-auto items-center bg-[#232323] flex h-16 md:h-[5rem] lg:h-[4rem] px-2 md:px-2 lg:max-w-[clamp(422px,3vw,490px)] "
+                    >
                         <img
                             className="w-auto md:w-full md:max-w-[4rem] lg:max-w-[3rem] h-auto"
                             src={AppIcon}

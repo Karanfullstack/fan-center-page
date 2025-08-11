@@ -17,7 +17,7 @@ export default function Navbar() {
                     alt="mobile_logo"
                 />
             </section>
-            <section className="flex items-center   w-[156px] h-[48px] justify-end ">
+            <section className="flex items-center w-[156px] h-[48px] justify-end ">
                 <Button />
             </section>
         </nav>
