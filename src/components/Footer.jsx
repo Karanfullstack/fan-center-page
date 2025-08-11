@@ -40,7 +40,7 @@ export default function Footer() {
                     </h2>
 
                     <Lottie
-                        classID="object-contain  h-auto flex self-center lg:max-w-max max-w-max w-[57%]"
+                        className="object-contain h-auto flex self-center lg:max-w-max max-w-max w-[57%]"
                         animationData={JerseyPartner}
                         loop={true}
                         autoplay={true}

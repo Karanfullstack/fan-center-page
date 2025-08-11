@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import Screen from './components/Screen';
 import Footer from './components/Footer';
 import Downlaod from './components/Downlaod';
+import Framer from './components/Framer';
 
 export default function App() {
     useEffect(() => {
@@ -37,6 +38,7 @@ export default function App() {
     return (
         <main className="container h-screen max-w-[1440px] mx-auto w-full">
             <Hero />
+            <Framer />
             <Screen />
             <Ranking />
             <Downlaod />
