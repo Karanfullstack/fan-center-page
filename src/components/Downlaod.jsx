@@ -9,6 +9,8 @@ import DownloadPlay from '../assets/downloadplay.svg';
 import { useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
+import 'swiper/css';
+import 'swiper/css/navigation';
 export default function Downlaod() {
     const containerRef = useRef(null);
     const location = useLocation();
@@ -62,11 +64,11 @@ export default function Downlaod() {
                     <h2 className="text-base md:text-[3.5rem] lg:text-[4rem]  text-[2.5rem] font-bold leading-[1.5]">
                         Dawaj do gry!
                     </h2>
-                    <p className="font-medium    text-base leading-[1.5] text-xl">
+                    <p className="font-medium  text-base leading-[1.5] text-xl">
                         Pobierz aplikację:
                     </p>
 
-                    <div className="flex gap-3  items-center w-full lg:max-w-[270px]  md:max-w-[280px] max-w-[170px] h-full  justify-center">
+                    <div className="flex gap-3 mt-1  items-center w-full lg:max-w-[20vw]  md:max-w-[40vw] max-w-[42vw] h-full  justify-center">
                         <img
                             className="hover:cursor-pointer"
                             onClick={() =>

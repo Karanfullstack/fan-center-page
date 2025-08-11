@@ -4,7 +4,9 @@ import AppIcon from '../assets/App-Icon.svg';
 import BgVectorMobile from '../assets/Vector-mobile.png';
 import Jersey from '../assets/animation/lp-jersey.json';
 import Lottie from 'lottie-react';
+
 import { useNavigate } from 'react-router-dom';
+import TextAnimate from './common/TextToAnimate';
 export default function Hero() {
     const navigate = useNavigate();
     return (
@@ -52,11 +54,16 @@ export default function Hero() {
                         <div className="flex flex-col justify-center items-center">
                             <div className="text-[clamp(1rem,calc(1.9rem),5rem)] text-center font-bold  leading-[1.5] md:text-[clamp(3.5rem,7.5vw,6rem)] md:break-words  lg:text-[clamp(4rem,1vw,5rem)]">
                                 <div className="lg:hidden">
-                                    Udowodnij, że wiesz więcej niż reszta i zgarnij nagrody!
+                                    <TextAnimate>
+                                        <p>Udowodnij, że wiesz więcej</p>
+                                        <p>niż reszta i zgarnij nagrody!</p>
+                                    </TextAnimate>
                                 </div>
                                 <div className="hidden md:hidden lg:block">
-                                    <h1>Udowodnij, że wiesz więcej </h1>
-                                    <h1>niż reszta i zgarnij nagrody!</h1>
+                                    <TextAnimate>
+                                        <h1>Udowodnij, że wiesz więcej </h1>
+                                        <h1>niż reszta i zgarnij nagrody!</h1>
+                                    </TextAnimate>
                                 </div>
                             </div>
                         </div>

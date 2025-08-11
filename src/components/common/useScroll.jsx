@@ -1,11 +1,37 @@
 import { useRef, useEffect, useState, useCallback } from 'react';
 
-export function useScroll(scrollOffset = 200) {
+export function useScroll(cardSelector) {
     const scrollRef = useRef(null);
     const [isBeginning, setIsBeginning] = useState(true);
     const [isEnd, setIsEnd] = useState(false);
+    const [cardWidth, setCardWidth] = useState(0);
 
-    // Track scroll position for arrow disabling
+    // Measure first card's bounding width
+    const measureCardWidth = useCallback(() => {
+        if (!scrollRef.current || !cardSelector) return;
+        const firstCard = scrollRef.current.querySelector(cardSelector);
+        if (firstCard) {
+            const rect = firstCard.getBoundingClientRect();
+            setCardWidth(rect.width + 10); // 16px for gap
+        }
+    }, [cardSelector]);
+
+    useEffect(() => {
+        const handleResize = () => measureCardWidth();
+
+        // Ensure we measure after layout and assets are loaded
+        window.addEventListener('resize', handleResize);
+        window.addEventListener('load', handleResize);
+
+        measureCardWidth(); // initial measure
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            window.removeEventListener('load', handleResize);
+        };
+    }, [measureCardWidth]);
+
+    // Scroll tracking
     const handleScroll = useCallback(() => {
         if (!scrollRef.current) return;
         const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
@@ -13,86 +39,29 @@ export function useScroll(scrollOffset = 200) {
         setIsEnd(scrollLeft + clientWidth >= scrollWidth - 1);
     }, []);
 
-    // Arrow scroll
-    const scrollByOffset = useCallback((offset) => {
-        if (scrollRef.current) {
-            scrollRef.current.scrollBy({ left: offset, behavior: 'smooth' });
+    // Scroll exactly one card at a time
+    const handlePrev = useCallback(() => {
+        if (scrollRef.current && cardWidth) {
+            const newScroll = scrollRef.current.scrollLeft - cardWidth;
+            scrollRef.current.scrollTo({ left: newScroll, behavior: 'smooth' });
         }
-    }, []);
+    }, [cardWidth]);
 
-    const handlePrev = useCallback(
-        () => scrollByOffset(-scrollOffset),
-        [scrollByOffset, scrollOffset]
-    );
-    const handleNext = useCallback(
-        () => scrollByOffset(scrollOffset),
-        [scrollByOffset, scrollOffset]
-    );
+    const handleNext = useCallback(() => {
+        if (scrollRef.current && cardWidth) {
+            const newScroll = scrollRef.current.scrollLeft + cardWidth;
+            scrollRef.current.scrollTo({ left: newScroll, behavior: 'smooth' });
+        }
+    }, [cardWidth]);
 
-    // Drag with momentum
     useEffect(() => {
         const el = scrollRef.current;
         if (!el) return;
 
-        let isDragging = false;
-        let startX, scrollStart;
-        let velocity = 0;
-        let lastX, lastTime;
-        let momentumId;
-
-        const onMouseDown = (e) => {
-            isDragging = true;
-            startX = e.pageX;
-            scrollStart = el.scrollLeft;
-            lastX = e.pageX;
-            lastTime = Date.now();
-            velocity = 0;
-            cancelAnimationFrame(momentumId);
-            el.style.cursor = 'grabbing';
-        };
-
-        const onMouseMove = (e) => {
-            if (!isDragging) return;
-            const dx = e.pageX - startX;
-            el.scrollLeft = scrollStart - dx;
-
-            // Track velocity
-            const now = Date.now();
-            const dt = now - lastTime;
-            if (dt > 0) {
-                velocity = (e.pageX - lastX) / dt;
-                lastX = e.pageX;
-                lastTime = now;
-            }
-        };
-
-        const onMouseUp = () => {
-            isDragging = false;
-            el.style.cursor = 'grab';
-
-            // Momentum animation
-            const momentum = () => {
-                el.scrollLeft -= velocity * 20; // multiplier controls speed
-                velocity *= 0.95; // friction
-                if (Math.abs(velocity) > 0.01) {
-                    momentumId = requestAnimationFrame(momentum);
-                }
-            };
-            momentum();
-        };
-
-        el.style.cursor = 'grab';
-        el.addEventListener('mousedown', onMouseDown);
-        window.addEventListener('mousemove', onMouseMove);
-        window.addEventListener('mouseup', onMouseUp);
         el.addEventListener('scroll', handleScroll);
-
         handleScroll();
 
         return () => {
-            el.removeEventListener('mousedown', onMouseDown);
-            window.removeEventListener('mousemove', onMouseMove);
-            window.removeEventListener('mouseup', onMouseUp);
             el.removeEventListener('scroll', handleScroll);
         };
     }, [handleScroll]);

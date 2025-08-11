@@ -27,7 +27,7 @@ export default function Footer() {
                         W 1 dzień
                     </span>
 
-                    <span className="h-full  font-medium md:flex-grow md:text-[1.40rem]  md:h-3/4 md:w-auto lg:w-auto text-lg lg:text-[1.25rem] leading-[1.5] flex justify-center items-center h w-full">
+                    <span className="h-full   font-medium md:flex-grow md:text-[1.40rem]  md:h-3/4 md:w-auto lg:w-auto text-[1rem,50vw,1.25rem] lg:text-[1.25rem] leading-[1.5] flex justify-center items-center h w-full">
                         Wdrożenie na Twoich kanałach!
                     </span>
                 </div>

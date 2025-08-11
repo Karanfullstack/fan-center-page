@@ -8,8 +8,12 @@ import imageDesktop1 from '../assets/desktop-ranking/Frame-1.png';
 import imageDesktop2 from '../assets/desktop-ranking/Frame-2.png';
 import imageDesktop3 from '../assets/desktop-ranking/Frame.png';
 import SlidersRanking from './SlidersRanking';
-import { useScroll } from './common/useScroll';
 import ArrowNavigation from './common/ArrowNavigation';
+import { useRef, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 const imageData = [image3, image2, image1];
 const imageDesktopData = [imageDesktop3, imageDesktop1, imageDesktop2];
@@ -58,7 +62,25 @@ const prizes = [
     },
 ];
 export default function Ranking() {
-    const { scrollRef, isBeginning, isEnd, handlePrev, handleNext, handleScroll } = useScroll();
+    const swiperRef = useRef(null);
+    const sectionRef = useRef(null);
+    const [_activeIndex, setActiveIndex] = useState(0);
+    const [isBeginning, setIsBeginning] = useState(true);
+    const [isEnd, setIsEnd] = useState(false);
+    const handleSlideChange = (swiper) => {
+        setActiveIndex(swiper.realIndex);
+        setIsBeginning(swiper.isBeginning);
+        setIsEnd(swiper.isEnd);
+    };
+
+    const handlePrev = () => {
+        if (swiperRef.current) swiperRef.current.slidePrev();
+    };
+
+    const handleNext = () => {
+        if (swiperRef.current) swiperRef.current.slideNext();
+    };
+
     return (
         <article className="max-w-[1440px] overflow-hidden  flex-col flex justify-start items-center w-full pt-10 px-5 md:pt-12 md:px-7 h-auto">
             <section className="w-full h-full lg:space-y-10 md:space-y-10 space-y-10 flex-col flex justify-center items-center">
@@ -114,13 +136,39 @@ export default function Ranking() {
                         />
                     </section>
                     <section
-                        onScroll={handleScroll}
-                        ref={scrollRef}
-                        className="w-full  h-full overflow-y-hidden hide-scrollbar scroll-smooth   gap-x-2.5 flex items-center "
+                        ref={sectionRef}
+                        className="w-full mx-auto justify-center h-full   flex "
                     >
-                        {prizes.map((prize) => (
-                            <SlidersRanking key={prize.rank} prize={prize} />
-                        ))}
+                        <Swiper
+                            className="w-full mx-auto h-full"
+                            modules={[Navigation]}
+                            spaceBetween={10}
+                            loop={false}
+                            speed={300}
+                            breakpoints={{
+                                0: { slidesPerView: 2, spaceBetween: 20 },
+                                640: { slidesPerView: 3, spaceBetween: 20 },
+                                768: { slidesPerView: 4, spaceBetween: 20 },
+                                1024: { slidesPerView: 6.5, spaceBetween: 20 },
+                            }}
+                            onSwiper={(swiper) => {
+                                swiperRef.current = swiper;
+                            }}
+                            slidesPerView={1.2}
+                            initialSlide={0}
+                            onSlideChange={handleSlideChange}
+                        >
+                            {prizes.map((prize, index) => (
+                                <SwiperSlide
+                                    className="flex h-full mx-auto w-full justify-center "
+                                    key={index}
+                                >
+                                    <div className="flex h-full  justify-center">
+                                        <SlidersRanking key={prize.rank} prize={prize} />
+                                    </div>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
                     </section>
                 </figure>
             </section>
