@@ -19,11 +19,24 @@ export default function Downlaod() {
         if (location.hash === '#download-section') {
             requestAnimationFrame(() => {
                 if (containerRef.current) {
-                    containerRef.current.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'center',
-                        inline: 'center',
-                    });
+                    const element = containerRef.current;
+                    const targetPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                    const startPosition = window.pageYOffset;
+                    const distance = targetPosition - startPosition;
+                    const duration = 1500; // in ms, increase for slower scroll
+                    let start = null;
+
+                    function step(timestamp) {
+                        if (!start) start = timestamp;
+                        const progress = timestamp - start;
+                        const percent = Math.min(progress / duration, 1);
+                        window.scrollTo(0, startPosition + distance * percent);
+                        if (progress < duration) {
+                            requestAnimationFrame(step);
+                        }
+                    }
+
+                    requestAnimationFrame(step);
                 }
             });
         }
@@ -33,7 +46,7 @@ export default function Downlaod() {
         <section
             ref={containerRef}
             id="download-section"
-            className="max-w-[1400px]  flex-col relative flex items-center justify-center w-full  h-[100vh]"
+            className="max-w-[1400px]  flex-col relative flex items-center justify-center w-full  h-[100dvh]"
         >
             <div className="w-full hidden md:block lg:hidden sm:hidden h-[10vh]"></div>
             <figure className="max-w-full md:space-y-7 lg:space-y-0 lg:gap-0 gap-4 pt-26  lg:w-[1200px] lg:h-full  md:w-[800px]  flex flex-col h-[700px] md:h-[850px]  justify-center items-center w-full">
