@@ -23,7 +23,7 @@ export default function Downlaod() {
                     const targetPosition = element.getBoundingClientRect().top + window.pageYOffset;
                     const startPosition = window.pageYOffset;
                     const distance = targetPosition - startPosition;
-                    const duration = 1500; // in ms
+                    const duration = 1200; // in ms
                     let start = null;
 
                     function step(timestamp) {
