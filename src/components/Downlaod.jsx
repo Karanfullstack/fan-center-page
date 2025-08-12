@@ -19,24 +19,11 @@ export default function Downlaod() {
         if (location.hash === '#download-section') {
             requestAnimationFrame(() => {
                 if (containerRef.current) {
-                    const element = containerRef.current;
-                    const targetPosition = element.getBoundingClientRect().top + window.pageYOffset;
-                    const startPosition = window.pageYOffset;
-                    const distance = targetPosition - startPosition;
-                    const duration = 1200; // in ms
-                    let start = null;
-
-                    function step(timestamp) {
-                        if (!start) start = timestamp;
-                        const progress = timestamp - start;
-                        const percent = Math.min(progress / duration, 1);
-                        window.scrollTo(0, startPosition + distance * percent);
-                        if (progress < duration) {
-                            requestAnimationFrame(step);
-                        }
-                    }
-
-                    requestAnimationFrame(step);
+                    containerRef.current.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center',
+                        inline: 'center',
+                    });
                 }
             });
         }
