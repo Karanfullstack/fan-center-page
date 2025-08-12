@@ -4,7 +4,7 @@ export default function SlidersRanking({ prize }) {
             <section className="flex flex-col  w-full h-full justify-between items-start gap-3">
                 <span className=" text-primary text-xl font-bold   leading-1">{prize.rank}.</span>
 
-                <div className="flex flex-col h-[100px] lg:h-[120px] lg:justify-end   flex-wrap   items-start justify-start">
+                <div className="flex flex-col h-[100px]    flex-wrap   items-start justify-start">
                     <span className="text-2xl font-bold leading-[1.5]">
                         {prize.amount} {prize.currency}
                     </span>
