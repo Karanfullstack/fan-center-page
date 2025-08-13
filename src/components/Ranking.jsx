@@ -88,7 +88,7 @@ export default function Ranking() {
                     {/* main heading and Dowload Buttton */}
                     <section className="w-full  space-y-6 h-full flex flex-col justify-start items-center">
                         <h2 className=" text-[2rem] md:text-[2.4rem] lg:text-[3rem] text-center text-base leading-[1.5] font-bold">
-                            Wygraj niesamowite nagrody
+                            Wygraj niezłe nagrody
                         </h2>
                         <Button />
                     </section>
